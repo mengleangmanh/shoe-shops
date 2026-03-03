@@ -6,7 +6,7 @@ export default function Navbar() {
   const { totalQuantity } = useCart();
 
   return (
-    <nav className="bg-gray-100 px-20 py-3 flex items-center justify-between">
+    <nav className="bg-gray-100 px-20 py-3 flex items-center justify-between sticky top-0 z-50">
       {/* Left - Logo */}
       <div className="flex items-center">
         <Link to="/" className="font-bold text-xl">
@@ -15,7 +15,7 @@ export default function Navbar() {
       </div>
 
       {/* Center - Navigation Links */}
-      <div className="hidden md:flex space-x-8 font-medium text-sm">
+      <div className="hidden md:flex space-x-8 ml-20 font-medium text-sm">
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
       </div>
