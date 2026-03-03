@@ -15,7 +15,7 @@ export default function Navbar() {
       </div>
 
       {/* Center - Navigation Links */}
-      <div className="hidden md:flex space-x-8 ml-20 font-medium text-sm">
+      <div className="hidden md:flex space-x-8 ml-40 font-medium text-sm">
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
       </div>
