@@ -98,7 +98,7 @@ export default function Cart() {
             Clear All
           </Button>
           <a
-            href="https://pay.ababank.com/oRF8/ap3yezfp" // យក Link នេះចេញពី App ABA របស់អ្នក (ត្រង់ផ្នែក Receive Money / QR Code)
+            href="src/assets/aba.png" // យក Link នេះចេញពី App ABA របស់អ្នក (ត្រង់ផ្នែក Receive Money / QR Code)
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1"
