@@ -97,9 +97,31 @@ export default function Cart() {
           >
             Clear All
           </Button>
-          <Button className="flex-1 bg-black text-white py-3 shadow-lg hover:bg-gray-800">
+          <a
+            href="https://pay.ababank.com/oRF8/ap3yezfp" // យក Link នេះចេញពី App ABA របស់អ្នក (ត្រង់ផ្នែក Receive Money / QR Code)
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1"
+          >
+            <Button className="w-full bg-blue-600 text-white py-3 shadow-lg hover:bg-blue-700 flex items-center justify-center gap-2">
+              <span className="font-bold">Pay via ABA Bank</span>
+            </Button>
+          </a>
+
+          {/* <a
+            href="https://your-bank-payment-link.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1"
+          >
+            <Button className="w-full bg-black text-white py-3 shadow-lg hover:bg-gray-800">
+              Checkout Now
+            </Button>
+          </a> */}
+
+          {/* <Button className="flex-1 bg-black text-white py-3 shadow-lg hover:bg-gray-800">
             Checkout Now
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>
