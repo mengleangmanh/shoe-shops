@@ -3,6 +3,128 @@ import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 
 export default function Home() {
+  const products = [
+    {
+      id: 1,
+      name: "Running Shoes",
+      price: 89.99,
+      image: "/src/assets/photo_1.jpg",
+    },
+    {
+      id: 2,
+      name: "Basketball Sneakers",
+      price: 120.0,
+      image: "/src/assets/photo_2.jpg",
+    },
+    {
+      id: 3,
+      name: "Casual Loafers",
+      price: 59.5,
+      image: "/src/assets/photo_3.jpg",
+    },
+    {
+      id: 1,
+      name: "Running Shoes",
+      price: 89.99,
+      image: "/src/assets/photo_4.jpg",
+    },
+    {
+      id: 2,
+      name: "Basketball Sneakers",
+      price: 120.0,
+      image: "/src/assets/photo_5.jpg",
+    },
+    {
+      id: 3,
+      name: "Casual Loafers",
+      price: 59.5,
+      image: "/src/assets/photo_6.jpg",
+    },
+    {
+      id: 1,
+      name: "Running Shoes",
+      price: 89.99,
+      image: "/src/assets/photo_7.jpg",
+    },
+    {
+      id: 2,
+      name: "Basketball Sneakers",
+      price: 120.0,
+      image: "/src/assets/photo_8.jpg",
+    },
+    {
+      id: 3,
+      name: "Casual Loafers",
+      price: 59.5,
+      image: "/src/assets/photo_9.jpg",
+    },
+    {
+      id: 1,
+      name: "Running Shoes",
+      price: 89.99,
+      image: "/src/assets/photo_10.jpg",
+    },
+    {
+      id: 2,
+      name: "Basketball Sneakers",
+      price: 120.0,
+      image: "/src/assets/photo_11.png",
+    },
+    {
+      id: 3,
+      name: "Casual Loafers",
+      price: 59.5,
+      image: "/src/assets/photo_12.png",
+    },
+    {
+      id: 1,
+      name: "Running Shoes",
+      price: 89.99,
+      image: "/src/assets/photo_13.png",
+    },
+    {
+      id: 2,
+      name: "Basketball Sneakers",
+      price: 120.0,
+      image: "/src/assets/photo_14.png",
+    },
+    {
+      id: 3,
+      name: "Casual Loafers",
+      price: 59.5,
+      image: "/src/assets/photo_15.png",
+    },
+    {
+      id: 1,
+      name: "Running Shoes",
+      price: 89.99,
+      image: "/src/assets/photo_16.png",
+    },
+    {
+      id: 2,
+      name: "Basketball Sneakers",
+      price: 120.0,
+      image: "/src/assets/photo_2.jpg",
+    },
+    {
+      id: 3,
+      name: "Casual Loafers",
+      price: 59.5,
+      image: "/src/assets/photo_3.jpg",
+    },
+    {
+      id: 1,
+      name: "Running Shoes",
+      price: 89.99,
+      image: "/src/assets/photo_19.png",
+    },
+    {
+      id: 2,
+      name: "Basketball Sneakers",
+      price: 120.0,
+      image: "/src/assets/photo_20.png",
+    },
+  ];
   return (
     <>
       <div className="bg-cover bg-center h-screen bg-[url('https://saysh.com/cdn/shop/files/01_Saysh-Shoes_041_1.webp?v=1707541464&width=5760')] ">
@@ -19,50 +141,16 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="h-screen">
-        <div className="flex flex-col items-center justify-center h-full text-center">
-          <h2 className="text-3xl font-bold mb-4">Featured Products</h2>
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            <ProductCard
-              product={{
-                id: 1,
-                name: "Running Shoes",
-                price: 89.99,
-                image: "/src/assets/photo_1.jpg",
-              }}
-              onAdd={() => {}}
-            />
-            <ProductCard
-              product={{
-                id: 2,
-                name: "Casual Sneakers",
-                price: 69.99,
-                image: "/src/assets/photo_2.jpg",
-              }}
-              onAdd={() => {}}
-            />
-            <ProductCard
-              product={{
-                id: 3,
-                name: "Formal Oxfords",
-                price: 129.99,
-                image: "/src/assets/photo_3.jpg",
-              }}
-              onAdd={() => {}}
-            />
-            <ProductCard
-              product={{
-                id: 4,
-                name: "Hiking Boots",
-                price: 149.99,
-                image: "/src/assets/photo_4.jpg",
-              }}
-              onAdd={() => {}}
-            />
-          </div>
+      <div className="h-screen px-11 mt-11 max-w-8xl mx-auto">
+        <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-4">
+          {products.map((product) => (
+            <div key={product.id} className="min-w-[250px]">
+              <ProductCard product={product} />
+            </div>
+          ))}
         </div>
+        <div className="bg-black max-w-8xl mx-auto h-16 mb-11 "></div>
       </div>
-      <div></div>
     </>
   );
 }
