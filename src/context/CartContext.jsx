@@ -45,7 +45,6 @@
 //   return context;
 // }
 
-
 import React, { createContext, useContext, useState, useMemo } from "react";
 
 const CartContext = createContext(null);
@@ -70,9 +69,7 @@ export function CartProvider({ children }) {
   };
 
   const removeItem = (id) => {
-    setItems((prevItems) =>
-      prevItems.filter((item) => item.id !== id)
-    );
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
   const clearCart = () => {
@@ -91,11 +88,7 @@ export function CartProvider({ children }) {
     totalQuantity,
   };
 
-  return (
-    <CartContext.Provider value={value}>
-      {children}
-    </CartContext.Provider>
-  );
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
 
 export function useCart() {
