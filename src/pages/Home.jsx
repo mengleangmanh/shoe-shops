@@ -172,7 +172,7 @@ export default function Home() {
             </button>
             <button
               onClick={() => scroll("right")}
-              className="p-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 shadow-sm"
+              className="p-3 bg-white border rounded-full hover:bg-gray-100 shadow-sm"
             >
               <ChevronRight />
             </button>
