@@ -72,9 +72,9 @@ export default function Cart() {
                   </div>
                   <div className="flex items-center gap-4">
                     {/* Quantity Controls */}
-                    <div className="flex items-center border rounded-lg">
+                    <div className="flex items-center bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                       <button
-                        className="p-2 hover:bg-gray-100 rounded-l-lg transition-colors"
+                        className="p-3 hover:bg-red-50 hover:text-red-600 rounded-l-xl transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
                         onClick={() =>
                           updateQuantity(item.id, item.quantity - 1)
                         }
@@ -82,11 +82,13 @@ export default function Cart() {
                       >
                         <Minus className="w-4 h-4" />
                       </button>
-                      <span className="px-4 py-2 font-semibold min-w-[3rem] text-center">
-                        {item.quantity}
-                      </span>
+                      <div className="px-4 py-3 bg-white border-x border-gray-200 min-w-[4rem] text-center">
+                        <span className="font-bold text-gray-900 text-lg">
+                          {item.quantity}
+                        </span>
+                      </div>
                       <button
-                        className="p-2 hover:bg-gray-100 rounded-r-lg transition-colors"
+                        className="p-3 hover:bg-green-50 hover:text-green-600 rounded-r-xl transition-all duration-200"
                         onClick={() =>
                           updateQuantity(item.id, item.quantity + 1)
                         }

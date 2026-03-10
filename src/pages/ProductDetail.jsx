@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import products from "../data/products";
 import { useAddToCart } from "../hooks/useAddToCart";
 import { useFavorites } from "../context/FavoritesContext";
+import QuantityCounter from "../components/QuantityCounter";
 import { ArrowLeft, ShoppingCart, Star, Heart } from "lucide-react";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const { addToCart, isInCart, getCartQuantity } = useAddToCart();
   const { isFavorite, toggleFavorite } = useFavorites();
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
 
   const product = products.find((p) => p.id === parseInt(id, 10));
   if (!product) {
@@ -31,7 +33,7 @@ export default function ProductDetail() {
   }
 
   const handleAddToCart = () => {
-    addToCart(product, { showFeedback: true });
+    addToCart(product, { quantity: selectedQuantity, showFeedback: true });
   };
 
   const quantity = getCartQuantity(product.id);
@@ -145,15 +147,12 @@ export default function ProductDetail() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Quantity
               </h3>
-              <div className="flex items-center space-x-3">
-                <button className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50">
-                  -
-                </button>
-                <span className="w-12 text-center">1</span>
-                <button className="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center hover:bg-gray-50">
-                  +
-                </button>
-              </div>
+              <QuantityCounter
+                quantity={selectedQuantity}
+                onQuantityChange={setSelectedQuantity}
+                min={1}
+                max={10}
+              />
             </div>
 
             {/* Action Buttons */}
@@ -169,7 +168,16 @@ export default function ProductDetail() {
               >
                 <ShoppingCart className="w-5 h-5" />
                 <span>
-                  {inCart ? `Add More (${quantity} in cart)` : "Add to Cart"}
+                  {inCart ? (
+                    <div className="flex items-center gap-2">
+                      <span>Add More</span>
+                      <span className="bg-white/20 px-2 py-0.5 rounded-full text-xs font-semibold">
+                        {quantity} in cart
+                      </span>
+                    </div>
+                  ) : (
+                    "Add to Cart"
+                  )}
                 </span>
               </button>
               <button

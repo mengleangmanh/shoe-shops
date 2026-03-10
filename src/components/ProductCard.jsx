@@ -31,8 +31,11 @@ export default function ProductCard({ product, onAdd }) {
             className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-300"
           />
           {inCart && (
-            <div className="absolute top-2 right-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
-              {quantity} in cart
+            <div className="absolute top-2 right-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-lg border border-blue-400/20 backdrop-blur-sm">
+              <div className="flex items-center gap-1">
+                <ShoppingCart className="w-3 h-3" />
+                <span>{quantity}</span>
+              </div>
             </div>
           )}
         </div>

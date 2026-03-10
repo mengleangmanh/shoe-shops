@@ -41,16 +41,19 @@ export default function Navbar() {
             className="cursor-pointer hover:text-red-500 transition-colors"
           />
           {favorites.length > 0 && (
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
-              {favorites.length}
+            <span className="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full text-xs font-bold min-w-[1.25rem] h-5 flex items-center justify-center shadow-lg border-2 border-white">
+              {favorites.length > 99 ? "99+" : favorites.length}
             </span>
           )}
         </Link>
         <Link to="/cart" className="relative inline-block">
-          <ShoppingBag size={20} className="cursor-pointer" />
+          <ShoppingBag
+            size={20}
+            className="cursor-pointer hover:text-blue-600 transition-colors"
+          />
           {totalQuantity > 0 && (
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
-              {totalQuantity}
+            <span className="absolute -top-2 -right-2 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full text-xs font-bold min-w-[1.25rem] h-5 flex items-center justify-center shadow-lg border-2 border-white">
+              {totalQuantity > 99 ? "99+" : totalQuantity}
             </span>
           )}
         </Link>

@@ -5,18 +5,23 @@ export function useAddToCart() {
   const { addToCart, items } = useCart();
 
   const handleAddToCart = (product, options = {}) => {
-    addToCart(product);
+    const quantity = options.quantity || 1;
+
+    // Add the product with specified quantity
+    for (let i = 0; i < quantity; i++) {
+      addToCart(product);
+    }
 
     // Optional: Add visual feedback or analytics here
     if (options.showFeedback !== false) {
       // Could add toast notification here in the future
-      console.log(`Added ${product.name} to cart`);
+      console.log(`Added ${quantity} x ${product.name} to cart`);
     }
 
     // Optional: Track analytics
     if (options.trackEvent) {
       // Could send analytics event here
-      console.log(`Product added: ${product.id}`);
+      console.log(`Product added: ${product.id}, quantity: ${quantity}`);
     }
   };
 
