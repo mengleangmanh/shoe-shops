@@ -6,7 +6,6 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 export default function Home() {
   const scrollRef = useRef(null);
 
-  // 1. Manual Scroll Function
   const scroll = (direction) => {
     const { current } = scrollRef;
     if (!current) return;
@@ -15,7 +14,6 @@ export default function Home() {
     if (direction === "left") {
       current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     } else {
-      // If at the end, jump back to start, otherwise scroll right
       if (
         current.scrollLeft + current.offsetWidth >=
         current.scrollWidth - 10
@@ -27,18 +25,14 @@ export default function Home() {
     }
   };
 
-  // 2. Auto-Scroll Logic
   useEffect(() => {
     const interval = setInterval(() => {
       scroll("right");
-    }, 3000); // Change slides every 3 seconds
-
-    // Cleanup: Stop the timer if the user leaves the page
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
   const products = [
-    /* ... your products array ... */
     {
       id: 1,
       name: "Classic Running Shoes",
@@ -151,7 +145,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero Section stays the same */}
       <div className="bg-cover bg-center h-screen bg-[url('https://saysh.com/cdn/shop/files/01_Saysh-Shoes_041_1.webp?v=1707541464&width=5760')] ">
         <div className="flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-50 w-full">
           <h1 className="text-4xl font-bold mb-4">Welcome to Shoe Shop</h1>
@@ -185,14 +178,10 @@ export default function Home() {
             </button>
           </div>
         </div>
-
-        {/* 3. The Scroll Container */}
         <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-hidden scroll-smooth pb-10"
-          onMouseEnter={() => {
-            /* Optional: Logic to pause auto-scroll */
-          }}
+          onMouseEnter={() => {}}
         >
           {products.map((product, index) => (
             <div
@@ -204,6 +193,8 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      <div className="text-center py-12 bg-gray-100"></div>
     </>
   );
 }
