@@ -101,13 +101,13 @@ const products = [
     id: 19,
     name: "Racing Running Shoes",
     price: 179.99,
-    image: "/src/assets/photo_19.png",
+    image: "/photo_19.png",
   },
   {
     id: 20,
     name: "Pro Basketball Sneakers",
     price: 189.99,
-    image: "/src/assets/photo_20.png",
+    image: "/photo_20.png",
   },
 ];
 
