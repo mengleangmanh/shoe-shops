@@ -29,6 +29,26 @@ export function CartProvider({ children }) {
     setItems([]);
   };
 
+  const updateQuantity = (id, newQuantity) => {
+    if (newQuantity <= 0) {
+      removeItem(id);
+      return;
+    }
+
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item,
+      ),
+    );
+  };
+
+  // Alias for consistency
+  const addToCart = addItem;
+
+  const totalPrice = useMemo(() => {
+    return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }, [items]);
+
   const totalQuantity = useMemo(() => {
     return items.reduce((sum, item) => sum + item.quantity, 0);
   }, [items]);
@@ -36,9 +56,12 @@ export function CartProvider({ children }) {
   const value = {
     items,
     addItem,
+    addToCart, // Alias for consistency
     removeItem,
+    updateQuantity,
     clearCart,
     totalQuantity,
+    totalPrice,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
