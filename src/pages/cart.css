@@ -1,0 +1,6 @@
+.cart-bg {
+  background-image: url(../assets/cart-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
