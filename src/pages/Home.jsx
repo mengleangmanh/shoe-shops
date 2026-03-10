@@ -212,8 +212,43 @@ export default function Home() {
           <p className="text-gray-600">100% secure checkout</p>
         </div>
       </div>
+      <div className="text-center py-12 bg-gray-50 h-1/2 grid grid-cols-4"></div>
 
-      <div className="text-center py-12 bg-gray-50 h-screen grid grid-cols-2 grid-rows-2"></div>
+      <div className="grid grid-cols-2 grid-rows-2 h-screen w-full">
+        {/* Image 1: Top Left */}
+        <div className="bg-[url('https://images.unsplash.com/photo-1542291026-7eec264c27ff')] bg-cover bg-center border-2 border-white relative group">
+          <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+            <h3 className="text-white text-2xl font-bold uppercase">Running</h3>
+          </div>
+        </div>
+
+        {/* Image 2: Top Right */}
+        <div className="bg-[url('https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa')] bg-cover bg-center border-2 border-white relative group">
+          <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+            <h3 className="text-white text-2xl font-bold uppercase">
+              Lifestyle
+            </h3>
+          </div>
+        </div>
+
+        {/* Image 3: Bottom Left */}
+        <div className="bg-[url('https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a')] bg-cover bg-center border-2 border-white relative group">
+          <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+            <h3 className="text-white text-2xl font-bold uppercase">
+              Basketball
+            </h3>
+          </div>
+        </div>
+
+        {/* Image 4: Bottom Right */}
+        <div className="bg-[url('https://images.unsplash.com/photo-1549298916-b41d501d3772')] bg-cover bg-center border-2 border-white relative group">
+          <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all flex items-center justify-center">
+            <h3 className="text-white text-2xl font-bold uppercase">
+              Training
+            </h3>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
