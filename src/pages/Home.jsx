@@ -194,7 +194,26 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="text-center py-12 bg-gray-100"></div>
+      <div className="text-center py-12 bg-gray-100 h-1/2 grid grid-cols-4">
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="text-xl font-semibold mb-2">Free Shipping</h3>
+          <p className="text-gray-600">On all orders over $50</p>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+          <p className="text-gray-600">We're here to help anytime</p>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="text-xl font-semibold mb-2">Easy Returns</h3>
+          <p className="text-gray-600">30-day return policy</p>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <h3 className="text-xl font-semibold mb-2">Secure Payment</h3>
+          <p className="text-gray-600">100% secure checkout</p>
+        </div>
+      </div>
+
+      <div className="text-center py-12 bg-gray-50 h-screen grid grid-cols-2 grid-rows-2"></div>
     </>
   );
 }
