@@ -313,7 +313,7 @@ export default function Home() {
               className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className="aspect-[4/3] bg-[url('https://images.unsplash.com/photo-1549298916-b41d501d3772')] bg-cover bg-center">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-cewhnter justify-center">
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
                   <div className="text-center text-white">
                     <h3 className="text-3xl font-bold uppercase mb-2">
                       Training
